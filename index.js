@@ -1,10 +1,7 @@
 const express = require('express');
 const path = require('path');
 const http = require('http');
-require('dotenv').config();
 const socketio = require('socket.io');
-const mongoose = require('mongoose');
-const MONGODB_URI = process.env.DATABASE;
 
 const messageFormat = require('./utils/messages');
 const {
@@ -52,13 +49,5 @@ io.on('connection', socket => {
         }
     })
 })
-
-mongoose.connect(MONGODB_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => {
-        console.log('connected to dB');
-    })
 
 server.listen(PORT, () => console.log(`Server running at port ${PORT}`));
