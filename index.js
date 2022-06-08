@@ -22,6 +22,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 const botUser = 'AppBot';
 
 io.on('connection', socket => {
+    socket.on('joinPrivateRoom',({username,room,password}) => {
+        const roomId = room+'&'+password;
+        const user = joinedUser(socket.id, username, roomId);
+        socket.join(user.room);
+        socket.emit('message', messageFormat(botUser, `Welcome ${user.username}`,false));
+        socket.broadcast.to(user.room).emit('message', messageFormat(botUser, `${user.username} joins the chat`,false));
+        io.to(user.room).emit('roomUsers', {
+            room: room,
+            users: getRoomUsers(user.room)
+        })
+    })
+
+    socket.on('privateMessage', (msg) => {
+        const user = getUser(socket.id);
+        io.to(socket.id).emit('message', messageFormat(user.username, msg,true));
+        socket.broadcast.to(user.room).emit('message', messageFormat(user.username, msg,false));
+    })
+
+
     socket.on('joinRoom', ({
         username,
         room
