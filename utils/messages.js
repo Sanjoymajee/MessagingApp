@@ -4,7 +4,7 @@ const messageFormat = (username,text,myMsg) => {
         username,
         text,
         myMsg,
-        time: moment().format('h:mm a')
+        time: moment().utcOffset("+05:30").format('h:mm a')
     }
 }
 
