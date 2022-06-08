@@ -38,6 +38,15 @@ a {
 	font-size: 17px;
 }
 
+#leave-btn {
+	cursor: pointer;
+	padding: 5px 15px;
+	background: var(--light-color);
+	color: var(--dark-color-a);
+	border: 0;
+	font-size: 17px;
+}
+
 /* Chat Page */
 
 .chat-container {
@@ -104,6 +113,16 @@ a {
 	background-color: var(--light-color);
 	border-radius: 5px;
 	overflow-wrap: break-word;
+	max-width: 70%;
+}
+
+.message-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.message-container.active {
+	flex-direction: row-reverse;
 }
 
 .chat-messages .message .meta {
@@ -200,5 +219,13 @@ a {
 
 	.chat-sidebar {
 		display: none;
+	}
+	.chat-messages .message {
+		max-width: 90%;
+	}
+
+	.btn {
+		padding: 0 10px 0 10px;
+		font-size: 14px;
 	}
 }

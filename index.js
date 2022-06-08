@@ -28,8 +28,8 @@ io.on('connection', socket => {
     }) => {
         const user = joinedUser(socket.id, username, room);
         socket.join(user.room);
-        socket.emit('message', messageFormat(botUser, `Welcome ${user.username}`));
-        socket.broadcast.to(user.room).emit('message', messageFormat(botUser, `${user.username} joins the chat`));
+        socket.emit('message', messageFormat(botUser, `Welcome ${user.username}`,false));
+        socket.broadcast.to(user.room).emit('message', messageFormat(botUser, `${user.username} joins the chat`,false));
         io.to(user.room).emit('roomUsers', {
             room: user.room,
             users: getRoomUsers(user.room)
@@ -37,12 +37,13 @@ io.on('connection', socket => {
     })
     socket.on('chatMessage', (msg) => {
         const user = getUser(socket.id);
-        io.to(user.room).emit('message', messageFormat(user.username, msg));
+        io.to(socket.id).emit('message', messageFormat(user.username, msg,true));
+        socket.broadcast.to(user.room).emit('message', messageFormat(user.username, msg,false));
     })
     socket.on('disconnect', () => {
         const user = userLeaves(socket.id);
         if (user) {
-            io.to(user.room).emit('message', messageFormat(botUser, `${user.username} left the chat`));
+            io.to(user.room).emit('message', messageFormat(botUser, `${user.username} left the chat`,false));
             io.to(user.room).emit('roomUsers', {
                 room: user.room,
                 users: getRoomUsers(user.room)

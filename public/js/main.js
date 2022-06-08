@@ -39,6 +39,11 @@ chatForm.addEventListener('submit', (e) => {
 })
 
 const outputMessage = (message) => {
+  const container = document.createElement('div');
+  container.classList.add('message-container');
+  if(message.myMsg){
+    container.classList.add('active');
+  }
   const div = document.createElement('div');
   div.classList.add('message');
   const p = document.createElement('p');
@@ -50,7 +55,8 @@ const outputMessage = (message) => {
   para.classList.add('text');
   para.innerText = message.text;
   div.appendChild(para);
-  document.querySelector('.chat-messages').appendChild(div);
+  container.appendChild(div);
+  document.querySelector('.chat-messages').appendChild(container);
 }
 
 const outputRoomName = (room) => {
