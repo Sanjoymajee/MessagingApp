@@ -1,4 +1,4 @@
-# Welcome to CharLord
+# Welcome to ChatLord
 
 This is a **Real-time Live online chatting application** build with **[Node Js](https://nodejs.org/en/docs/)** and **[Socket Io](https://socket.io/docs/v4/)**.
 
