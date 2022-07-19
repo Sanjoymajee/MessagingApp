@@ -4,7 +4,7 @@ This is a **Real-time Live online chatting application** build with **[Node Js](
 
 Here you can join any available public chatroom -
 
-<div align="center" style="height: 30rem">
+<div align="center" style="height: 20rem">
   <img alt="Demo" src="./images/public_join_room.png" />
 </div>
 </br>
