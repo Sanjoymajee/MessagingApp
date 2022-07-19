@@ -17,7 +17,7 @@
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-	background: var(--light-color);
+	background: #FFDEB4;
 	margin: 20px;
 }
 
@@ -32,8 +32,8 @@ a {
 .btn {
 	cursor: pointer;
 	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
+	background: #B2A4FF;
+	color: #FFF9CA;
 	border-radius: 1rem;
 	border: 0;
 	font-size: 17px;
@@ -42,8 +42,8 @@ a {
 #leave-btn {
 	cursor: pointer;
 	padding: 5px 15px;
-	background: var(--light-color);
-	color: var(--dark-color-a);
+	background: #B2A4FF;
+	color: #FFF9CA;
 	border: 0;
 	font-size: 17px;
 }
@@ -58,14 +58,23 @@ a {
 }
 
 .chat-header {
-	background: var(--dark-color-a);
-	color: #fff;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	background: #878bf0;
+	color: #FFF9CA;
 	padding: 15px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+	height: 2.5rem;
+	width: 2.5rem;
+	margin-right: 5px;
 }
 
 .chat-main {
@@ -74,17 +83,18 @@ a {
 }
 
 .chat-sidebar {
-	background: var(--dark-color-b);
-	color: #fff;
+	background: #B2A4FF;
+	color: #FFF9CA;
 	padding: 20px 20px 60px;
 	overflow-y: scroll;
 }
 
 .chat-sidebar h2 {
 	font-size: 20px;
-	background: rgba(0, 0, 0, 0.1);
+	background: #878bf0;
 	padding: 10px;
 	margin-bottom: 20px;
+	border-radius: 5px;
 }
 
 .chat-sidebar h3 {
@@ -97,9 +107,10 @@ a {
 
 .chat-sidebar ul {
 	font-size: 20px;
-	background: rgba(0, 0, 0, 0.1);
+	background: #878bf0;
 	padding: 10px;
 	margin-bottom: 20px;
+	border-radius: 5px;
 }
 
 .chat-messages {
@@ -141,9 +152,7 @@ a {
 
 .chat-form-container {
 	padding: 20px 30px;
-	background-color: var(--dark-color-a);
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	background-color: #878bf0;
 }
 
 .chat-form-container form {
@@ -161,7 +170,7 @@ a {
 .join-container {
 	max-width: 500px;
 	margin: 80px auto;
-	color: #fff;
+	color: #FFF9CA;
 }
 
 #users{
@@ -173,16 +182,12 @@ a {
 .join-header {
 	text-align: center;
 	padding: 20px;
-	background: var(--dark-color-a);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	background: #878bf0;
 }
 
 .join-main {
 	padding: 30px 40px;
-	background: var(--dark-color-b);
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+	background: #B2A4FF;
 }
 
 .join-main p {
@@ -203,6 +208,13 @@ a {
 	padding: 5px;
 	height: 40px;
 	width: 100%;
+	border: 0;
+}
+
+.join-main input:focus {
+	border: 0;
+	color: rgb(59, 57, 57);
+	outline: none;
 }
 
 .join-main select {
@@ -210,9 +222,18 @@ a {
 	padding: 5px;
 	height: 40px;
 	width: 100%;
+	border: 0;
+	outline: none;
+	color: rgb(59, 57, 57);;
+}
+
+.join-main select:focus {
+	border: 0;
+	outline: none;
 }
 
 .join-main .btn {
+	background-color: #878bf0;
 	margin-top: 20px;
 	width: 100%;
 }
@@ -225,6 +246,7 @@ a {
 
 #msg:focus {
 	border: 0;
+	outline: none;
 }
 
 @media (max-width: 700px) {
