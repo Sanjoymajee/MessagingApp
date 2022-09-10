@@ -2,7 +2,7 @@
 
 This is a **Real-time Live online chatting application** build with **[Node Js](https://nodejs.org/en/docs/)** and **[Socket Io](https://socket.io/docs/v4/)**.
 
-Website Link - [ChatLord](https://live-messaging-app.herokuapp.com/)
+Website Link - [ChatLord](https://enchanting-earrings-dog.cyclic.app/)
 
 Here you can join any available public chatroom -
 
